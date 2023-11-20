@@ -1,66 +1,59 @@
+// esercizio 1 parola palindroma
 
+// chiedere all'utente se vuole giocare
+let askPlayer = prompt("Vuoi giocare a è Palindromo?");
 
+let play = true;
 
-//devo chiedere se vuole giocare 
-/*let playGame = "si"
-let palindromicGame = prompt("Vuoi sapere se la tua parola è palindroma? si o no")
-// inzio: caso palindromo o meno, raggionamento:
-// inzio chiedendo le informazioni all'utente 
-// poi creare devo creare una funzione che mi legga la parola e veda se è palindorma o meno
-// in fine devo comunicare all'utente se lo è o no
-let askName = prompt("Inserisci la parola");
+if (askPlayer == "si") {
+    while (play == true) {
+        // chiedere all'utente una parola
 
+        let askName = prompt("Inserisci una parola");
 
-//devo chiedere se vuole giocare anche ad un gioco nuovo
+        // devo creare una funzione per vedere se la parola è palindroma 
+        ceckIfPalindrome(askName);
 
-let playGameTwo = "si"
-let gameEvenOrOdd = prompt("Vuoi giocare al gioco? si o no")
+        let askContinue = prompt ("Vuoi continuare a giocare?");
 
-// inizio: caso pari o dispari, raggionamento:
-// inzio sempre chiedendo info all'utente facendogli scegliere pari o dispari
-// di seguito gli chiedo di inserire un numero e generarne uno randomico
-// devo fare una funzione che mi sommi i due numeri e controlli che siano pari o dispari
-// in fine devo comunicare che ha vinto.
-
-let found = false;
-
-function genarateEvenOrOdd( ) {
-    if (gameEvenOrOdd == "si") {
-        while (found == false && playGameTwo == "si") {
-
-            let askEvenOrOdd = prompt("Inserisci pari o dispari");
-            let askNumber = prompt("Inserisci numero");
-            let randomNumber = Math.floor(Math.random()* 5) + 1;
-
-            let sumNumber = askNumber + randomNumber; 
-
-            for (let i = 0; i < sumNumber; i++){
-                if ( i % 2 == 0) {
-                    alert (" pari ")
-                } else {
-                    alert (" dispari ")
-                }
-            }
-            
-            
-        }   
-
-            
-
+        if (askContinue == "si") {
+            play = true;
+        } else {
+            play = false;
+        }
     }
 }
-esercizio non finito 
-*/
 
 
 
-/*
-// chiedere all'utente una parola
 
-let askName = prompt("Inserisci una parola");
+// esercizio 2 chiedere all'utente se vuole giocare, di scegliere pari o dispari, inserire un numero da 1 a 5 e dire se ha vinto
+ askPlayer = prompt("Vuoi giocare a è Pari o Dispari?");
 
-// devo creare una funzione per vedere se la parola è palindroma 
-ceckIfPalindrome(askName);
+ play = true;
+
+if (askPlayer == "si") {
+    while (play == true) {
+       genarateEvenOrOdd();
+
+        let askContinue = prompt ("Vuoi continuare a giocare?");
+
+        if (askContinue == "si") {
+            play = true;
+        } else {
+            play = false;
+        }
+    }
+}
+
+
+
+
+
+
+//-------------- FUNZIONI---------------
+
+// se l'utente vuole giocare dagli la risposta se è palindroma o meno la parola
 
 function ceckIfPalindrome (name) {
     for (let i = 0; i < name.length; i++) {
@@ -68,19 +61,15 @@ function ceckIfPalindrome (name) {
         let j = name.length - 1 - i;
 
         if ( name [i] != name [j] ) {
-            console.log("non è palindroma");
+            alert("non è palindroma");
             return;
         }
 
     } 
-    console.log("è palindroma");
+    alert("è palindroma");
 }
-*/
 
-// l'utente deve scrivere pari o dispari e un numero da 1 a 5 
-
-
-
+// crea una funzione per generare un numero random da 1 a 5
 
 function generateRandom (min, max) {
     return Math.floor(Math.random()* (max - min + 1))  +min;
@@ -121,7 +110,7 @@ function genarateEvenOrOdd () {
         }
     } 
 
-    // chiedo al computer di generarmi un numero randomico tra 1 e 5 
+    // numeri da 1 a 5 random 
 
     let evenOrOddRandom = generateRandom(1, 5);
 
