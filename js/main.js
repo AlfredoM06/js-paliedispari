@@ -63,8 +63,9 @@ let askName = prompt("Inserisci una parola");
 controllaSePalindroma(askName);
 
 function controllaSePalindroma (name) {
-    for (let i = 0, j = name.length - 1; i < name.length; i++, j--) {
+    for (let i = 0; i < name.length; i++) {
         console.log(name[i]);
+        let j = name.length - 1 - i;
 
         if ( name [i] != name [j] ) {
             console.log("non è palindroma");
@@ -74,3 +75,6 @@ function controllaSePalindroma (name) {
     } 
     console.log("è palindroma");
 }
+
+
+
