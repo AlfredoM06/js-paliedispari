@@ -54,15 +54,15 @@ esercizio non finito
 
 
 
-
+/*
 // chiedere all'utente una parola
 
 let askName = prompt("Inserisci una parola");
 
 // devo creare una funzione per vedere se la parola è palindroma 
-controllaSePalindroma(askName);
+ceckIfPalindrome(askName);
 
-function controllaSePalindroma (name) {
+function ceckIfPalindrome (name) {
     for (let i = 0; i < name.length; i++) {
         console.log(name[i]);
         let j = name.length - 1 - i;
@@ -75,6 +75,93 @@ function controllaSePalindroma (name) {
     } 
     console.log("è palindroma");
 }
+*/
+
+// l'utente deve scrivere pari o dispari e un numero da 1 a 5 
+
+
+
+
+function generateRandom (min, max) {
+    return Math.floor(Math.random()* (max - min + 1))  +min;
+}
+
+
+// creare la funzione per sommare numero chiesto all'utente con numero random e vedere se è pari o dispari e se ha vinto
+
+function genarateEvenOrOdd () {
+
+    let askEvenOrOdd; 
+
+    let correct = false;
+
+    while (!correct){
+        askEvenOrOdd = prompt("Inserisci pari o dispari");
+        if (askEvenOrOdd != "pari" && askEvenOrOdd != "dispari") {
+            alert("strunz è sbagliat a scriver");
+            correct = false;
+        } else {
+            correct = true;
+        }
+
+    } 
+
+    correct = false;
+    let askNumber;
+
+    while (!correct) {
+        askNumber = prompt("Inserisci un numero da 1 a 5");
+        askNumber = parseInt (askNumber);
+
+        if (askNumber >= 1 && askNumber <=5){
+            correct = true;
+        } else {
+            alert("allor si propj strunz")
+            correct = false;
+        }
+    } 
+
+    // chiedo al computer di generarmi un numero randomico tra 1 e 5 
+
+    let evenOrOddRandom = generateRandom(1, 5);
+
+    // converto askNumber da testo a numero
+
+    askNumber = parseInt(askNumber);
+
+    // calcolo la somma 
+
+    let sumNumber = askNumber + evenOrOddRandom;
+
+    // controllo se la somma è pari o dispari e comunico all'utente il risultato
+
+    if ( sumNumber % 2 == 0) {
+        //è pari
+
+        console.log("la somma è pari");
+
+        if (askEvenOrOdd == "pari") {
+            alert("Hai vinto");
+        } else {
+            alert("hai perso");
+        }
+    } else {
+        // se non è pari è dispari
+        console.log("la somma è dispari");
+
+        if (askEvenOrOdd == "dispari") {
+            alert("Hai vinto");
+        } else {
+            alert("hai perso");
+        }
+    }
+
+
+}
+
+
+
+
 
 
 
